@@ -35,6 +35,10 @@ function MM_DW_effectScale(obj,method,effect,dir,originY,originX,per,size,speed)
 function MM_popupMsg(msg) { //v1.0
   alert(msg);
 }
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+}
 </script>
 </head>
 	</style>
@@ -50,7 +54,7 @@ function MM_popupMsg(msg) { //v1.0
   <h1><img src= "Title Small.png" alt="" width="1150" height="335" class="title"/></h1></div>
 
 <div class="credit">
-<a href="#" onMouseOver="MM_swapImage('Credit','','Credits-Pink.png',1)" onMouseOut="MM_swapImgRestore()"><img src="Credits-Blue.png" alt="" width="699" height="156" id="Credit" onMouseOver="MM_DW_effectScale($(this),'show','scale','both','middle','center',130,'both',1000)"></a></div>
+<a href="#" onMouseOver="MM_swapImage('Credit','','Credits-Pink.png',1)" onMouseOut="MM_swapImgRestore()"><img src="Credits-Blue.png" alt="" width="699" height="156" id="Credit" onClick="MM_goToURL('parent','To Be Continued.html');return document.MM_returnValue" onMouseOver="MM_DW_effectScale($(this),'show','scale','both','middle','center',130,'both',1000)"></a></div>
 <div class="enter">
 	<a href="EXPO-1.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','Begin-Pink.png',1);MM_DW_effectScale($(this),'show','scale','both','middle','center',110,'both',1000)"><img src="Begin-Blue.png" alt="" width="699" height="156" id="Image5"></a></div>
 
